@@ -1,0 +1,69 @@
+<style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: menu; }
+    .item3 { grid-area: main; }
+    .item4 { grid-area: right; }
+    .item5 { grid-area: footer; }
+    
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'main main main main main main'
+        'footer footer footer footer footer footer';
+      grid-gap: 10px;
+      background-color: gray;
+      padding: 10px;
+    }
+    .wrapper {
+    text-align: center;
+}
+    
+    .grid-container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+    button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+
+}
+
+.button1 {background-color: #717075;} /* Green */
+
+    
+    </style>
+    
+    <h1>Photos</h1>
+    
+    
+      <div class="grid-container">
+        <div class="item1">
+          <img src={{photo.thumbnailUrl}} alt="Forest">
+          </div>
+        <div style= font-weight:bold class="item3">{{photo.title}}
+           
+        </div> 
+        <div class="item5">
+
+            
+                <li>Id: {{photo.id}}</li>
+                <li>AlbumId: {{photo.albumId}}</li>
+                <li>Url: <a href={{photo.url}}>{{photo.url}}</a></li>
+              
+          
+        </div>
+      </div>
+      <div class="wrapper">
+      <button class="button button1" (click)="Onclick()">Go back to overview</button>
+      </div>

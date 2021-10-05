@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PhotoService } from './photo.service';
+import { Photo } from './photo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PhotoLibrary4';
+  photos: Photo[] = [];
+
+  constructor(private photoService: PhotoService) { }
+
+  ngOnInit() {
+    this.photoService.getPhotos();
+  }
 }
+

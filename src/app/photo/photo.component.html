@@ -1,0 +1,44 @@
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: gray;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+
+<h1>Photos</h1>
+
+
+  <div class="grid-container" *ngFor="let photo of photos;">
+    <div class="item1">
+      <img src={{photo.thumbnailUrl}} alt="Forest">
+      </div>
+    <div style= font-weight:bold class="item3">
+      <a routerLink="/singlephoto/{{photo.id}}">
+      
+      {{photo.title}}
+      </a>
+    </div> 
+    
+  </div>
+
+  
+ 

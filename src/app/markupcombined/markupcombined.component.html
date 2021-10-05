@@ -1,0 +1,27 @@
+<header>
+    <h1>Photos</h1>
+  </header>
+  <div class="band">
+    <div class="item-1"  >
+      <a  class="card"   >
+        <div  class="thumb" style="background-image: url({{photo.thumbnailUrl}}); " ></div>
+        <article>
+          <h1>{{photo.title}}</h1>
+          <span>Id: {{photo.id}}</span>
+          <span>AlbumId: {{photo.albumId}}</span>
+          <span>Url: {{photo.url}}</span>
+        </article>
+      </a>
+    </div>
+    
+    <div class="item-2" *ngFor="let photo of photos;">
+      <a (click)="getPhoto(photo.id)" class="card">
+        <div class="thumb" style="background-image: url({{photo.thumbnailUrl}}});"></div>
+        <article>
+          <h1>{{photo.title}}</h1>
+
+        </article>
+      </a>
+    </div> 
+
+  </div>
